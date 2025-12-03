@@ -2,6 +2,18 @@
 Quick test script to verify the setup is working correctly.
 """
 
+# Suppress all warnings at the start
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
+import warnings
+warnings.filterwarnings('ignore')
+
+# Suppress TensorFlow warnings specifically
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
 print("=" * 60)
 print("Testing Hyper-Personalized Retail Support Agent Setup")
 print("=" * 60)

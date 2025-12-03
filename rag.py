@@ -7,6 +7,14 @@ import os
 from typing import List
 from pathlib import Path
 
+# Suppress warnings before importing ML libraries
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import warnings
+warnings.filterwarnings('ignore')
+import logging
+logging.getLogger('tensorflow').setLevel(logging.ERROR)
+
 try:
     import chromadb
     from chromadb.config import Settings

@@ -3,9 +3,15 @@ Main Streamlit application for the Hyper-Personalized Retail Support Agent.
 Provides a chat interface that combines customer context, store data, and RAG.
 """
 
+# Suppress warnings before any imports
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import warnings
+warnings.filterwarnings('ignore')
+
 import streamlit as st
 from typing import Dict, List
-import os
 
 # Import our modules
 from config import TOP_K_RAG, VECTOR_STORE_DIR
@@ -287,6 +293,16 @@ def main():
         
         # Privacy notice
         st.info("🔒 **Privacy Protected**: All personal information is masked before being sent to the AI model.")
+        
+        st.divider()
+        
+        # RAG update notice
+        with st.expander("📚 Updating Knowledge Base"):
+            st.caption("**If you change PDF files:**")
+            st.caption("1. Delete the `chroma_db/` folder, OR")
+            st.caption("2. Run `python rag.py` to rebuild")
+            st.caption("")
+            st.caption("This updates the AI's knowledge from your PDFs in `data/pdfs/`")
     
     # Chat interface
     chat_container = st.container()

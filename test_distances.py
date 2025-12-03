@@ -2,6 +2,13 @@
 Test script to demonstrate distance calculations for each customer.
 """
 
+# Suppress warnings
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
+os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+import warnings
+warnings.filterwarnings('ignore')
+
 from database import init_db, get_all_customers, get_nearest_store_for_customer
 
 print("=" * 80)
