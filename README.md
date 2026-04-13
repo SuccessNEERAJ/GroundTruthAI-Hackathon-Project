@@ -163,8 +163,8 @@ Once the app is running, you can capture screenshots showing:
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd <project-folder>
+   git clone https://github.com/SuccessNEERAJ/GroundTruthAI-Hackathon-Project/
+   cd GroundTruthAI-Hackathon-Project
    ```
 
 2. **Create and activate a virtual environment**
@@ -266,8 +266,5 @@ Once the app is running, you can capture screenshots showing:
 
 ## License
 
-This project is for educational and demonstration purposes.
+MIT License
 
----
-
-Built with ☕ and 🤖 for the GroundTruth AI Hackathon
